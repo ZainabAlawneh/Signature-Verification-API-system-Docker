@@ -1,4 +1,4 @@
-FROM nvidia/cuda:12.4.1-runtime-ubuntu22.04
+FROM nvidia/cuda:12.8.0-devel-ubuntu24.04
 
 ENV PIP_BREAK_SYSTEM_PACKAGES=1
 
@@ -10,7 +10,11 @@ RUN apt-get update && \
     liblzma-dev libgdbm-dev libnss3-dev libgl1 libglib2.0-0 && \
     rm -rf /var/lib/apt/lists/*
 
-RUN ln -s /usr/bin/python3 /usr/bin/python
+RUN apt-get update && apt-get install -y \
+    python3.12 \
+    python3-pip \
+    && rm -rf /var/lib/apt/lists/*
+
 
 WORKDIR /app
 
