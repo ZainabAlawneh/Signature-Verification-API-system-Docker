@@ -1,0 +1,8 @@
+siganet_trained_state_dic.pth
+model/siganet_trained_state_dic.pth
+**/siganet_trained_state_dic.pth
+
+venv/
+.venv/
+__pycache__/
+.vscode/
